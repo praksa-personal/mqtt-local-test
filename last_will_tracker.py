@@ -16,7 +16,7 @@ client.on_subscribe = on_subscribe
 client.on_message = on_message
 
 client.connect(host=host_ip, port=1883)
-client.subscribe("my/pub_lastwill", qos=1)
+client.subscribe("my/lastwill", qos=1)
 
 client.loop_forever()
 

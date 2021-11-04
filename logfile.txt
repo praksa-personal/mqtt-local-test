@@ -1,0 +1,8 @@
+
+Subscribed: 1 (1,)
+Subscribed: 2 (1,)
+Subscribed: 3 (1,)
+my/topic_2 1 b'{"user": "puntaric", "id": "XY123", "test_id": "TID123", "test_status": "OK", "finished": 0}'
+my/topic_2 1 b'{"user": "puntaric", "id": "XY123", "test_id": "TID123", "test_status": "OK", "finished": 0}'
+my/topic_2 1 b'{"user": "puntaric", "id": "XY123", "test_id": "TID123", "test_status": "OK", "finished": 0}'
+my/topic_2 1 b'{"user": "puntaric", "id": "XY123", "test_id": "TID123", "test_status": "OK", "finished": 0}'
