@@ -18,11 +18,12 @@ client.will_set("my/lastwill", this_client_id+ " Gone Offline",qos=1,retain=Fals
 client.connect(host=host_ip, port=1883)
 client.loop_start()
 
+print("Enter topic name you want to publish to:")
+topic = input()
+
 while True:
-    print("Enter topic name you want to publish to:")
-    topic = input()
     print("Enter message:")
     msg = input()
-    (rc, mid) = client.publish(topic, str(msg), qos=1)
+    (rc, mid) = client.publish(topic, str("From " + this_client_id + ": " + msg), qos=1)
 
 
