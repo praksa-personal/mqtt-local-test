@@ -1,7 +1,4 @@
-import json
-from time import time,sleep
 import paho.mqtt.client as paho
-import json
 
 
 def on_subscribe(client, userdata, mid, granted_qos):
