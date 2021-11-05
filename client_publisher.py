@@ -1,13 +1,11 @@
 import paho.mqtt.client as paho
-import time
-import json
 
 
 def on_publish(client, userdata, mid):
     #print("msg.id: "+str(mid))
     ()
  
-host_ip="192.168.0.29"
+host_ip = "192.168.0.29"
 this_client_id = "Publisher-Marko"
 
 
