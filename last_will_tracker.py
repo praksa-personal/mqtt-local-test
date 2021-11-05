@@ -11,12 +11,12 @@ host_ip="10.30.10.52"
 this_client_id = "Last-will-tracker"
 
 
-client = paho.Client(client_id=this_client_id, clean_session=True, userdata=None, protocol=paho.MQTTv31)
+client = paho.Client(client_id=this_client_id, clean_session=False, userdata=None, protocol=paho.MQTTv31)
 client.on_subscribe = on_subscribe
 client.on_message = on_message
 
 client.connect(host=host_ip, port=1883)
-client.subscribe("my/pub_lastwill", qos=1)
+client.subscribe("my/lastwill", qos=1)
 
 client.loop_forever()
 

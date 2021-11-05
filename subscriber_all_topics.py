@@ -43,7 +43,7 @@ msg_count_1 = 0
 msg_count_2 = 0
 msg_count_3 = 0
 
-client = paho.Client(client_id=this_client_id, clean_session=True, userdata=None, protocol=paho.MQTTv31)
+client = paho.Client(client_id=this_client_id, clean_session=False, userdata=None, protocol=paho.MQTTv31)
 client.on_subscribe = on_subscribe
 client.on_message = on_message
 

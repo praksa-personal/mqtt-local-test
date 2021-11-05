@@ -5,7 +5,7 @@ from threading import *
 
 class App1(Thread):
     
-    def run(self,topic):
+    def run(self,id,topic):
         def on_publish(client, userdata, mid):
             print("msg.id: "+str(mid))
 
@@ -20,17 +20,17 @@ class App1(Thread):
         data_json = json.dumps(data)
 
         host_ip="10.30.10.52"
-        this_client_id = "Publisher-1"
+        this_client_id = id
 
 
-        client = paho.Client(client_id=this_client_id, userdata=None, protocol=paho.MQTTv31)
+        client = paho.Client(client_id=this_client_id,clean_session=False, userdata=None, protocol=paho.MQTTv31)
         client.on_publish = on_publish
-        client.will_set("my/pub_lastwill", this_client_id+ " Gone Offline",qos=1,retain=False)
+        client.will_set("my/lastwill", this_client_id+ " Gone Offline",qos=1,retain=False)
 
         client.connect(host=host_ip, port=1883)
         client.loop_start()
 
-        for i in range(49):   
+        for i in range(99):   
             (rc, mid) = client.publish(topic, str(i), qos=1)
             time.sleep(0.5)
 
